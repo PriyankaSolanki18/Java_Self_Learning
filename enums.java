@@ -141,15 +141,23 @@ enum Status{         // by default status is consider as a class thus we can cre
 public class enums {
     public static void main(String[] args) {
         Status s = Status.RUNNING;
+        System.out.println(s.getClass().getSuperclass());
         System.out.println(s);
         s = Status.PENDING;
         System.out.println(s);
 
         System.out.println();
-
         for (Status var_1 : Status.values()) {
             System.out.println(var_1);
             System.out.println(var_1.ordinal());
+        }
+
+        System.err.println();
+
+        Status[] ss = Status.values();
+        
+        for(Status s1 : ss){
+            System.out.println(s1+" : "+s1.ordinal());
         }
     }
 }
